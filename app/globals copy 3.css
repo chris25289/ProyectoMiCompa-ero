@@ -1,0 +1,51 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+/*---break--- */
+@custom-variant dark (&:is(.dark *));
+
+/* Vincula las fuentes de next/font (layout.tsx) */
+@theme inline {
+  --font-sans: var(--font-inter);
+  --font-display: var(--font-jakarta);
+}
+
+@theme {
+  /* 60% Foundation */
+  --color-surface: #f6faf9;
+  --color-surface-container: #ebefee;
+  --color-surface-container-lowest: #ffffff;
+  --color-ivory: #fffdd2;
+  --color-cream: #feedb3;
+
+  /* 30% Brand */
+  --color-primary: #006566;
+  --color-on-primary: #ffffff;
+  --color-primary-container: #018081;   /* Turquoise */
+  --color-on-primary-container: #e4fffe;
+  --color-petroleum: #006770;
+
+  /* 10% Attention */
+  --color-pet-orange: #ffa503;
+  --color-secondary-container: #ffc969;
+
+  /* Neutros */
+  --color-on-surface: #181c1c;
+  --color-on-surface-variant: #3e4949;
+  --color-outline: #6e7979;
+  --color-outline-variant: #bdc9c8;
+
+  /* Sombras tintadas con Petroleum Blue (Tonal Layering) */
+  --shadow-soft: 0 4px 12px rgb(0 103 112 / 0.08);
+  --shadow-lift: 0 12px 32px rgb(0 103 112 / 0.12);
+
+  /* Soft Geometry */
+  --radius-3xl: 2rem; /* 32px para contenedores hero */
+   /* Gradiente cálido para logo y botones principales */
+  --gradient-warm: linear-gradient(135deg, #018081 0%, #FFA503 100%);
+}
+
+body {
+  background-color: var(--color-surface);
+  color: var(--color-on-surface);
+}

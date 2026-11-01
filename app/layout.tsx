@@ -1,30 +1,34 @@
-import { Geist, Geist_Mono } from "next/font/google"
-
-import "./globals.css"
-import { ThemeProvider } from "@/components/theme-provider"
+import type { ReactNode } from "react";
+import { Inter, Plus_Jakarta_Sans } from "next/font/google";
+import "./globals.css";
 import { cn } from "@/lib/utils";
+import { Navbar } from "@/components/layout/navbar";
 
-const geist = Geist({subsets:['latin'],variable:'--font-sans'})
-
-const fontMono = Geist_Mono({
+// Fuente de cuerpo (Inter) — DESIGN.md
+const inter = Inter({
   subsets: ["latin"],
-  variable: "--font-mono",
-})
+  variable: "--font-inter",
+  display: "swap",
+});
+
+// Fuente de títulos (Plus Jakarta Sans) — DESIGN.md
+const plusJakarta = Plus_Jakarta_Sans({
+  subsets: ["latin"],
+  variable: "--font-jakarta",
+  display: "swap",
+});
 
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode
+  children: ReactNode;
 }>) {
   return (
-    <html
-      lang="en"
-      suppressHydrationWarning
-      className={cn("antialiased", fontMono.variable, "font-sans", geist.variable)}
-    >
-      <body>
-        <ThemeProvider>{children}</ThemeProvider>
+    <html lang="es" className={cn(inter.variable, plusJakarta.variable)}>
+      <body className="font-sans antialiased">
+        <Navbar />
+        <main>{children}</main>
       </body>
     </html>
-  )
+  );
 }

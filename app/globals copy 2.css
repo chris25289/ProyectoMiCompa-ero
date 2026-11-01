@@ -1,0 +1,51 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+/*---break--- */
+@custom-variant dark (&:is(.dark *));
+
+/*---break--- */
+@theme inline {
+/* ==========================================
+1. TIPOGRAFÍA (Vinculada a Next.js)
+========================================== */
+  --font-sans: var(--font-inter);
+  --font-display: var(--font-jakarta);
+
+/* ==========================================
+2. COLORES DE MARCA (Del DESIGN.md)
+========================================== */
+  --color-ivory: #FFFDD2;        /* 60% Foundation */
+  --color-cream: #FEEDB3;        /* 60% Foundation (Cards) */
+  --color-turquoise: #018081;    /* 30% Brand */
+  --color-petroleum: #006770;    /* 30% Brand (Textos pesados) */
+  --color-pet-orange: #FFA503;   /* 10% Attention */
+
+/* ==========================================
+3. MAPEO AL SISTEMA SHADCN/UI
+========================================== */
+  --color-background: var(--color-ivory);
+  --color-foreground: var(--color-petroleum);
+  
+  --color-primary: var(--color-turquoise);
+  --color-primary-foreground: #ffffff;
+  
+  --color-card: var(--color-cream);
+  --color-card-foreground: var(--color-petroleum);
+  --radius: 0.5rem; /* 8px base */
+}
+/* ==========================================
+  ESTILOS BASE
+  ========================================== */
+body {
+background-color: var(--color-ivory);
+color: var(--color-foreground);
+/* Suavizado de fuentes para que se vea profesional */
+-webkit-font-smoothing: antialiased;
+-moz-osx-font-smoothing: grayscale;
+}
+/* Aplicar la fuente de títulos por defecto a los encabezados */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  color: var(--color-petroleum);
+}
